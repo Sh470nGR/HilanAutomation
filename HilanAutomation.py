@@ -10,7 +10,7 @@ if __name__ == '__main__':
     PATH = "C:\\Program Files (x86)\\chromedriver.exe"
     driver = webdriver.Chrome(PATH)
 
-    driver.get("https://motorola.net.hilan.co.il/login")
+    driver.get("hilan login url")
     time.sleep(2)
 
     driver.find_element_by_id("user_nm").send_keys("HILAN-ID")
