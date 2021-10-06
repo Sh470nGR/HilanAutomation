@@ -9,10 +9,10 @@ from PIL import Image
 if __name__ == '__main__':
     PATH = "C:\\Program Files (x86)\\chromedriver.exe"
     driver = webdriver.Chrome(PATH)
-
+# insert the login url of the site
     driver.get("hilan login url")
     time.sleep(2)
-
+# (HILAN-ID = your user id) & (HILAN-PASSWORD = your password)
     driver.find_element_by_id("user_nm").send_keys("HILAN-ID")
     driver.find_element_by_id("password_nm").send_keys("HILAN-PASSWORD")
     time.sleep(1)
@@ -61,11 +61,11 @@ if __name__ == '__main__':
     time.sleep(5)
 
     search = driver.find_element_by_name("identifier")
-    search.send_keys("USERNAME")
+    search.send_keys("USERNAME")  # your Gmail username
     search.send_keys(Keys.RETURN)
     driver.implicitly_wait(4)
     search = driver.find_element_by_name("password")
-    search.send_keys("GMAIL-PASSWORD")
+    search.send_keys("GMAIL-PASSWORD")  # your Gmail password
     time.sleep(3)
     search.send_keys(Keys.RETURN)
     time.sleep(5)
@@ -75,15 +75,15 @@ if __name__ == '__main__':
     driver.find_element_by_xpath("/html/body/div[7]/div[3]/div/div[2]/div[1]/div[1]/div[1]/div/div").click()
     time.sleep(3)
     open = driver.find_element_by_name("to")
-    open.send_keys("DESTENATION-EMAIL")
-    open = driver.find_element_by_name("subjectbox")
-    open.send_keys("Hours Analysis")
+    open.send_keys("DESTENATION-EMAIL")  # insert Destenation email address
+    open = driver.find_element_by_name("subjectbox") 
+    open.send_keys("Hours Analysis") 
     time.sleep(1)
     open.send_keys(Keys.TAB)
     time.sleep(1)
     time.sleep(1)
 
-    pyautogui.write("YOUR MESSAGE")
+    pyautogui.write("YOUR MESSAGE")     # inser your massage
     time.sleep(1)
 
     pyautogui.click(310, 1084)
