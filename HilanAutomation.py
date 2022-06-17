@@ -6,16 +6,23 @@ import pyautogui
 import datetime
 from PIL import Image
 
+
 if __name__ == '__main__':
+    
     PATH = "C:\\Program Files (x86)\\chromedriver.exe"
     driver = webdriver.Chrome(PATH)
-# insert the login url of the site
-    driver.get("hilan login url")
+    
+    hilan_URL = ""
+    username = ""
+    password = ""
+    
+    driver.get(hilan_URL)
     time.sleep(2)
-# (HILAN-ID = your user id) & (HILAN-PASSWORD = your password)
-    driver.find_element_by_id("user_nm").send_keys("HILAN-ID")
-    driver.find_element_by_id("password_nm").send_keys("HILAN-PASSWORD")
+
+    driver.find_element_by_id("user_nm").send_keys(username)
+    driver.find_element_by_id("password_nm").send_keys(password)
     time.sleep(1)
+    
     driver.find_element_by_xpath("/html/body/div[1]/form/div[3]/div/div/div[5]/button").click()
     time.sleep(3)
     driver.find_element_by_xpath("/html/body/form/div[3]/div[2]/div[2]/div[2]/ul/li[4]/a").click()
